@@ -1,0 +1,159 @@
+body{
+    margin:0;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    
+}
+*{
+    box-sizing:border-box;
+    font-family: 'segoe UI'
+}
+
+.main-container{
+    width:100vw;
+    height:100vh;
+   
+}
+.Uppernav h3:hover{
+    cursor: pointer;
+}
+
+
+nav{
+   
+    width:100%;
+    background:#093679;
+    height: 10%;
+    display: flex;
+    color: white;
+}
+.cs1{margin-left: 10px;}
+.home{
+    margin-left: 6px;
+}
+
+ 
+}
+.cs{
+    margin-left: 20px;
+}
+.cs:hover{
+   border-bottom: 5px solid dodgerblue;
+cursor: pointer;
+ 
+}
+.dropbtn {
+  background-color:#093679;
+  color: white;
+  padding: 16px;
+    font: bold;
+  font-size: 20px;
+  border: none;
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+.dropdown-content a:hover {background-color: white;}
+.dropdown:hover .dropdown-content {display: block;}
+.dropdown:hover .dropbtn {border-bottom:5px solid dodgerblue;
+cursor: pointer; }
+
+
+
+.card-front{
+    
+   height: 70%;
+    width: 50%;
+    margin-left: 28%;
+    margin-top: 20px;
+    border-radius: 20px;
+   background:#dcdde1;
+  box-shadow: 0 0 20px  black;
+border: 2px solid black; 
+    
+   
+    
+    
+}
+::placeholder {}
+
+input[type=text],input[type=password]{
+    width:50%;
+    padding:3px;
+    margin-left: 25%;
+    
+
+    
+
+   }
+
+.error {
+    border: 1px solid red;
+}
+
+
+input[type=button]{
+    border:none;
+    width:30%;
+    background:#2d2d2d;
+    color:#fff;
+    padding:2% 2%;
+    margin-left: 35%;
+    margin-top: 8px;
+    background-color: #093679;
+    border-radius:5px;
+    cursor: pointer;
+}
+
+.card-front h2{
+    text-align: center;
+    color:black;
+    
+    margin: 0;
+    
+}
+
+
+
+
+.input-fields h3 {
+    margin-bottom:0;
+    margin-left: 25%;
+}
+.Dropdown{
+    margin-left: 25%;
+}
+/*
+i.bxs-show,
+i.bxs-hide {
+    position: absolute;
+    top: 50%;
+    margin-left: 8%;
+    transform: translateY(-50%);
+    color: #1e3799;
+    cursor: pointer;
+
+}
+*/
+i {
+    position: relative;
+    
+    right: 4%;
+    color: black;
+}
+

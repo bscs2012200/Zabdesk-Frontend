@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home</title>
+    <link rel='stylesheet' href="style2.css">
+    <link rel="icon" href="Logo1.png" type="image/x-icon">
+</head>
+<body>
+    <div class="main-container">
+        <div class="Uppernav" style="display: flex;">
+            <img src="logofull.png" style="width: 150px;height: 60px; margin-left: 15px; margin-top: 5px;">
+            <h3 style="margin-left: 80%" onclick="window.location.href= 'index.html'" >Sign out</h3>
+        </div>
+        <nav>
+            <div class="cs1">
+                <div class="dropdown">
+                    <button class="dropbtn" onclick="window.location.href= 'index2.html'">Home</button>
+                </div>
+            </div>
+            <div class="home">
+                <div class="dropdown">
+                    <button class="dropbtn">Courses</button>
+                    <div class="dropdown-content">
+                        <a href="CurrentSem.html">Current Semester</a>
+                        <a href="Ps.html">Previous Semester</a>
+                        <a href="sr.html">Semester Result</a>
+                        <a href="pr.html">Printing Report</a>
+                    </div>
+                </div>
+            </div>
+            <div class="cs">
+                <div class="dropdown">
+                    <button class="dropbtn">Class Schedule</button>
+                    <div class="dropdown-content">
+                        <a href="weekly.html">Weekly Schedule</a>
+                    </div>
+                </div>
+            </div>
+            <div class="library">
+                <div class="dropdown">
+                    <button class="dropbtn">Library</button>
+                    <div class="dropdown-content">
+                        <a href="#">Books Issued</a>
+                        <a href="#">Card Request</a>
+                    </div>
+                </div>
+            </div> 
+            <div class="myacc">
+                <div class="dropdown">
+                    <button class="dropbtn">My Account</button>
+                    <div class="dropdown-content">
+                        <a href="ChangePass.html">Change Password</a>
+                        <a href="#">Profile Dcouments</a>
+                        <a href="#">ID Card Request</a>
+                        <a href="#">Change Profile Request</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div class="sub-sections">
+            <div class="subsection-one">
+                <div class="ebg" >
+        <div class="dp" id="dp">
+                
+           </div>
+           <div class="upload" id="upload">
+               <input type="file" accept="image/*" id="file" style="display: none;" onchange="loadFile(event  )">
+               <label style="font-family: sans-serif" for="file"><h3>Upload Image</h3></label>
+           </div>
+    </div>
+
+                
+            </div>
+            <div class="subsection-two">
+                
+<div class="slideshow-container">
+<div class="mySlides fade">
+<img src="Image01.jpeg" style="width:100%">
+</div>
+<div class="mySlides fade">
+<img src="Image02.jpeg" style="width:100%">
+</div>
+<div class="mySlides fade">
+<img src="Image03.jpeg" style="width:100%">
+</div>
+<div class="mySlides fade">
+<img src="Image04.jpeg" style="width:100%">
+</div>   
+<div class="mySlides fade">
+<img src="Image05.jpeg" style="width:100%">
+</div>
+
+</div>
+<br>
+
+<div class="Changer" style="text-align:center">
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+</div>
+
+
+                
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script type="text/javascript">
+var image = document.getElementById("dp");
+var loadFile = function(event) {
+    image.style.backgroundImage = "url(" + URL.createObjectURL(event.target.files[0]) + ")";
+}
+
+let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}    
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+  setTimeout(showSlides, 2000); // Change image every 2 seconds
+}
+
+</script>

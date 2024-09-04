@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Change Password</title>
+    <link rel='stylesheet' href="changepass.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="icon" href="Logo1.png" type="image/x-icon">
+</head>
+<body>
+    <div class="main-container">
+        <div class="Uppernav" style="display: flex;">
+            <img src="logofull.png" style="width: 150px;height: 60px; margin-left: 15px; margin-top: 5px;">
+            <h3 style="margin-left: 80%" onclick="window.location.href= 'index.html'">Sign out</h3>
+        </div>
+        <nav>
+            <div class="cs1">
+                <div class="dropdown">
+                    <button class="dropbtn"onclick="window.location.href= 'index2.html'">Home</button>
+                </div>
+            </div>
+            <div class="home">
+                <div class="dropdown">
+                    <button class="dropbtn">Courses</button>
+                    <div class="dropdown-content">
+                        <a href="CurrentSem.html">Current Semester</a>
+                        <a href="Ps.html">Previous Semester</a>
+                        <a href="sr.html">Semester Result</a>
+                        <a href="pr.html">Printing Report</a>
+                    </div>
+                </div>
+            </div>
+            <div class="cs">
+                <div class="dropdown">
+                    <button class="dropbtn">Class Schedule</button>
+                    <div class="dropdown-content">
+                        <a href="weekly.html">Weekly Schedule</a>
+                    </div>
+                </div>
+            </div>
+            <div class="library">
+                <div class="dropdown">
+                    <button class="dropbtn">Library</button>
+                    <div class="dropdown-content">
+                        <a href="#">Books Issued</a>
+                        <a href="#">Card Request</a>
+                    </div>
+                </div>
+            </div> 
+            <div class="myacc">
+                <div class="dropdown">
+                    <button class="dropbtn">My Account</button>
+                    <div class="dropdown-content">
+                        <a href="ChangePass.html">Change Password</a>
+                        <a href="#">Profile Dcouments</a>
+                        <a href="#">ID Card Request</a>
+                        <a href="#">Change Profile Request</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div class="card-front">
+            <h2>Reset/Change Password</h2>
+            <div class="input-fields">
+                <h3>Old Password</h3>
+                <input id="Password" type="password" placeholder="Enter Your Old Password">
+                <i class='bx bxs-show' id="togglePassword"></i>
+            </div>
+            <div class="input-fields">
+                <h3>New Password</h3>
+                <input id="NPassword" type="password" placeholder="Type Your New Password">
+                <i class='bx bxs-show' id="toggleNPassword"></i>
+            </div>
+            <div class="input-fields">
+                <h3>Retype New Password</h3>
+                <input id="RPassword" type="password" placeholder="Retype Your New Password">
+                <i class='bx bxs-show' id="toggleRPassword"></i>
+            </div>
+            <div class="Dropdown">
+                <h3 style="margin-bottom: 0; margin-top: 20px;">Secret Question</h3>
+                <select name="Secret" style="width: 67%;" id="SQ">
+                    <option value="Q1">Mother's Birthplace</option>
+                    <option value="Q2">Best Childhood Friend</option>
+                    <option value="Q3">Favourite Teacher</option>
+                    <option value="Q4">Name of First Pet</option>
+                </select>
+            </div>
+            <div class="input-fields">
+                <h3 style="margin-top: 12px;">Answer</h3>
+                <input id="ans" type="text" placeholder="Type Your Answer">
+            </div>
+            <div class="input-fields">
+                <input id="Signup" type="button" value="Submit" onclick="submit()">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script type="text/javascript">
+    function submit() {
+        var oldPassword = document.getElementById("Password");
+        var newPassword = document.getElementById("NPassword");
+        var retypePassword = document.getElementById("RPassword");
+        var answer = document.getElementById("ans");
+        var flag = true;
+        
+
+        // Check if the old password field is empty
+        if (oldPassword.value.trim() === "") {
+            alert("Please enter the old password.");
+            oldPassword.classList.add("error");
+            flag = false;
+        } else {
+            oldPassword.classList.remove("error");
+        }
+
+        // Check if the new password field is empty
+        if (newPassword.value.trim() === "") {
+            alert("Please enter a new password.");
+            newPassword.classList.add("error");
+            flag = false;
+        } else {
+            newPassword.classList.remove("error");
+        }
+
+       
+        var passwordPattern = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
+        if (!passwordPattern.test(newPassword.value.trim())) {
+            alert("New password must be at least 8 characters long and contain at least one lowercase letter, one uppercase letter, and one digit.");
+            newPassword.classList.add("error");
+            flag = false;
+        } else {
+            newPassword.classList.remove("error");
+        }
+
+    
+        if (newPassword.value.trim() !== retypePassword.value.trim()) {
+            alert("New password and retype password do not match.");
+            retypePassword.classList.add("error");
+            flag = false;
+        } else {
+            retypePassword.classList.remove("error");
+        } if (oldPassword.value.trim() === newPassword.value.trim()) {
+            alert("Old password and new password cannot be the same.");
+            newPassword.classList.add("error");
+            flag = false;
+        } else {
+            newPassword.classList.remove("error");
+        }
+
+        
+        if (answer.value.trim() === "") {
+            alert("Enter your answer");
+            answer.classList.add("error");
+            flag = false;
+        } else {
+            answer.classList.remove("error");
+        }
+
+       
+        if (flag) {
+            alert("Password changed successfully.");
+              oldPassword.value = "";
+    newPassword.value = "";
+    retypePassword.value = "";
+    answer.value = "";
+        }
+    }
+      const togglePassword = document.getElementById("togglePassword");
+    togglePassword.addEventListener("click", togglePasswordField);
+
+    function togglePasswordField() {
+        const passwordInput = document.getElementById("Password");
+        if (passwordInput.type === "password") {
+            passwordInput.type = "text";
+            togglePassword.classList.remove("bxs-show");
+            togglePassword.classList.add("bxs-hide");
+        } else {
+            passwordInput.type = "password";
+            togglePassword.classList.remove("bxs-hide");
+            togglePassword.classList.add("bxs-show");
+        }
+    }
+    const toggleNPassword = document.getElementById("toggleNPassword");
+    toggleNPassword.addEventListener("click", toggleNPasswordField);
+
+    const toggleRPassword = document.getElementById("toggleRPassword");
+    toggleRPassword.addEventListener("click", toggleRPasswordField);
+
+    function toggleNPasswordField() {
+        const newPasswordInput = document.getElementById("NPassword");
+        if (newPasswordInput.type === "password") {
+            newPasswordInput.type = "text";
+            toggleNPassword.classList.remove("bxs-show");
+            toggleNPassword.classList.add("bxs-hide");
+        } else {
+            newPasswordInput.type = "password";
+            toggleNPassword.classList.remove("bxs-hide");
+            toggleNPassword.classList.add("bxs-show");
+        }
+    }
+
+    function toggleRPasswordField() {
+        const retypePasswordInput = document.getElementById("RPassword");
+        if (retypePasswordInput.type === "password") {
+            retypePasswordInput.type = "text";
+            toggleRPassword.classList.remove("bxs-show");
+            toggleRPassword.classList.add("bxs-hide");
+        } else {
+            retypePasswordInput.type = "password";
+            toggleRPassword.classList.remove("bxs-hide");
+            toggleRPassword.classList.add("bxs-show");
+        }
+    }
+</script>

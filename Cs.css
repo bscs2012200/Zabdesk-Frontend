@@ -1,0 +1,155 @@
+body{
+    margin:0;
+    overflow-x: hidden;
+    
+    
+}
+*{
+    box-sizing:border-box;
+    font-family: 'segoe UI'
+}
+
+.main-container{
+    width:100vw;
+    height:100vh;
+   
+}
+.Uppernav h3:hover{
+    cursor: pointer;
+}
+
+
+nav{
+   
+    width:100%;
+    background:#093679;
+    height: 10%;
+    display: flex;
+    color: white;
+}
+.cs1{margin-left: 10px;}
+.home{
+    margin-left: 6px;
+}
+
+
+}
+.cs{
+    margin-left: 20px;
+}
+.cs:hover{
+   border-bottom: 5px solid dodgerblue;
+cursor: pointer;
+ 
+}
+.dropbtn {
+  background-color:#093679;
+  color: white;
+  padding: 16px;
+    font: bold;
+  font-size: 20px;
+  border: none;
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+.dropdown-content a:hover {background-color: white;}
+.dropdown:hover .dropdown-content {display: block;}
+.dropdown:hover .dropbtn {border-bottom:5px solid dodgerblue;
+cursor: pointer; }
+
+.sub-sections {
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+
+.sub-section {
+    flex-basis: 50%;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+#subsection1 {
+    
+    
+}
+
+#subsection2 {
+
+}
+
+#subsection3 {
+ 
+}
+
+#subsection4 {
+
+}
+#subsection5 {
+  
+}
+#subsection6 {
+  
+}
+#subsection7 {
+    flex-basis: 100%;
+
+    
+}
+.card{
+   
+    width: 80%;
+    height:10%;
+   background:#dcdde1;
+    border: 1px solid black;
+    border-radius: 10px;
+    box-shadow: 0 0 20px  black;
+    padding: 2% 2%;
+}
+
+input[type=button]{
+    
+    margin-bottom: 5px;
+    width: 120%;
+    
+    background-color:#093679;
+    color: white;
+    margin-left: 16%;
+    border-radius: 8px;
+    padding: 5px 5px;
+    cursor: pointer;
+   
+}
+input[type=button]:hover{
+    box-shadow: 0 0 20px  black;
+}
+ .ftb {
+            display: flex;
+            flex-direction: column;
+     margin-left: -10%;
+
+        }
+.bt{
+    margin-left: 25%;
+}
+.ttb{
+    margin-left: 30%;
+   
+}

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="style.css" />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="icon" href="Logo1.png" type="image/x-icon">
+    <title>Signup</title>
+</head>
+
+<body>
+    <div class="main-container">
+        <nav><img src="logofull.png" style="width: 150px;height: 95%; margin-left: 15px; margin-top: 3px "></nav>
+        <div class="form-section">
+            <div class="sub-section one">
+
+
+                <h1><u>NOTICE BOARD</u></h1>
+                <!--          <div class="haha">-->
+                <div id="carousel">
+                    <div class="item">
+                        <h2>Exclusive Discount Offer for SZABIST Students on Fire Fly Restaurant</h2>
+                        <p>Tired of eating from the same old restaurants? FIREFLY is happy to announce an exclusive discount offer on our PAN-Asian Cuisine for SZABIST.</p>
+                        <p>Dine with us today and get 25% discount on lunch and 15% discount on dinner.</p>
+                        <p>(Offer is valid for current students, alumni holding SAGA cards, and faculty with valid university ID cards only.)</p>
+                    </div>
+                    <div class="item">
+                        <h2>ADMIT CARD VERIFICATION NOTICE</h2>
+                        <p><strong><span>The exam dept. will be verifying the final exams admit cards of all registered students from Wednesday 10<sup>th</sup>&nbsp; till Sat, 20<sup>th</sup>&nbsp; May 2023, after which a certain late fee will be charged for the same. For details &nbsp;</span></strong><a id="link1" href="document/AdmitCard-Spring2023.pdf">Download Notice</a>"."</p>
+                    </div>
+                    <div class="item">
+                        <h2>On-Line registration Spring 2023</h2>
+                        <p><strong>On-Line Registration for Spring 2023</strong> will start from February 08, 2023. All students are required to register on-line through <u><a id="link2" href="https://springzabdesk.szabist.edu.pk" target="_blank">https://springzabdesk.szabist.edu.pk</a></u> last date of course registration is <strong>February 21, 2023</strong>. Classes will commence from February 13, 2023. For further details contact <a id="link3" href="mailto:moderators@szabist.edu.pk" target="_blank">moderators@szabist.edu.pk</a>" and "<a id="link4" href="document/Online_Registration_spring2023.pdf">Download Notice</a>" ."</p>
+                    </div>
+                    <div class="item"><h2>Generate Online Fees Challan</h2><p>For creating Payment Challan <a id="link5" href="https://springzabdesk.szabist.edu.pk/FeePayment" target="_blank">Click Here</a>. For Re-printing Payment Challan. <a id="link6" href="https://springzabdesk.szabist.edu.pk/FeePayment/Forms/frmFeePaymentChallanPrint.aspx" target="_blank">Click Here</a></p></div>
+                    <div class="item"><h2>Fee Notice Spring-2023</h2><p>Last date to submit the fee deadline for Spring 2023 semester is Friday, February 10<sup>th</sup>, 2023 for further detail please download fee notice. <a id="link9" href="document/Fee_Notice_Spring_2023.pdf">Download Fees Guideline</a><br> Fees Guideline: <a id="link8" href="document/Fee_Notice_Spring_2023.pdf">Download fee notice</a>.</p></div>
+                </div>
+                <div class="rb">
+                    <input type="radio" name="position" checked />
+                    <input type="radio" name="position" />
+                    <input type="radio" name="position" />
+                    <input type="radio" name="position" />
+                    <input type="radio" name="position" />
+                    <!--              </div>-->
+                </div>
+            </div>
+            <div class="sub-section two">
+                <div class="container">
+                    <div class="screen">
+                        <div class="screen__content">
+                            <form class="login">
+                                <div class="login__field">
+                                    <i class='bx bxs-user'></i>
+                                    <input type="text" id="sid" class="login__input" placeholder="Student ID">
+                                </div>
+                                <div class="login__field">
+                                    <i class='bx bxs-lock'></i>
+                                    <input type="password" class="login__input" id="pswd" placeholder="Password" required>
+                                    <i class='bx bxs-show' id="togglePassword"></i>
+                                </div>
+                                <button class="button login__submit" id="login">
+                                    <span class="button__text">Log In</span>
+                                    <i class="bx bxs-chevron-right"></i>
+                                </button>
+                            </form>
+                            <div class="forpass">
+                                <h3>FORGET PASSWORD?</h3>
+                            </div>
+                        </div>
+                        <div class="screen__background">
+                            <span class="screen__background__shape screen__background__shape4"></span>
+                            <span class="screen__background__shape screen__background__shape3"></span>
+                            <span class="screen__background__shape screen__background__shape2"></span>
+                            <span class="screen__background__shape screen__background__shape1"></span>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
+<script type="text/javascript">
+    const togglePassword = document.getElementById("togglePassword");
+    togglePassword.addEventListener("click", togglePasswordField);
+
+    function togglePasswordField() {
+        const passwordInput = document.getElementById("pswd");
+        if (passwordInput.type === "password") {
+            passwordInput.type = "text";
+            togglePassword.classList.remove("bxs-show");
+            togglePassword.classList.add("bxs-hide");
+        } else {
+            passwordInput.type = "password";
+            togglePassword.classList.remove("bxs-hide");
+            togglePassword.classList.add("bxs-show");
+        }
+    }
+
+    const radioButtons = document.querySelectorAll('input[type="radio"]');
+    const carousel = document.getElementById("carousel");
+
+    radioButtons.forEach((radioButton, index) => {
+        radioButton.addEventListener("click", () => {
+            carousel.style.setProperty("--position", index + 1);
+        });
+    });
+
+    const sidInput = document.getElementById("sid");
+    const passwordInput = document.getElementById("pswd");
+    const loginForm = document.querySelector(".login");
+
+    loginForm.addEventListener("submit", function(event) {
+        event.preventDefault(); // Prevent the form submission
+
+        const sidValue = sidInput.value;
+        const passwordValue = passwordInput.value;
+
+        const isSidValid = /^\d{1,7}$/.test(sidValue);
+        const isPasswordValid = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/.test(passwordValue);
+
+        if (!isSidValid || !isPasswordValid) {
+            if (!isSidValid) {
+                alert("Student ID should be a numeric value of maximum 7 digits.");
+            }
+            if (!isPasswordValid) {
+                alert("Password should contain at least 8 characters, including one uppercase letter, one lowercase letter, and one symbol.");
+            }
+        } else {
+            window.location.href = "index2.html";
+        }
+    });
+
+</script>
